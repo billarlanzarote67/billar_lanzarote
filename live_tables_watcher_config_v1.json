@@ -1,0 +1,29 @@
+{
+  "project_root": "C:\\AI\\BillarLanzarote",
+  "poll_seconds": 2,
+  "page_wait_seconds": 4,
+  "headless": false,
+  "stable_final_polls": 2,
+  "name_mode": "full_clean",
+  "strip_flag_emojis": true,
+  "save_raw_name_blocks": true,
+  "telegram": {
+    "enabled": true,
+    "send_every_score_change": false,
+    "send_final_only": true,
+    "bot_token": "8677774799:AAHfU74_aBUbvWqPUuz4ErhCJg4NCl6Vdk0",
+    "chat_id": "1102466013"
+  },
+  "tables": {
+    "mesa1": {
+      "name": "Mesa 1",
+      "primary_url": "https://cuescore.com/scoreboard/?code=c5f492c7",
+      "fallback_url": "https://cuescore.com/scoreboard/overlay/?tableId=77273419"
+    },
+    "mesa2": {
+      "name": "Mesa 2",
+      "primary_url": "https://cuescore.com/scoreboard/?code=0b581e05",
+      "fallback_url": "https://cuescore.com/scoreboard/overlay/?tableId=77273449"
+    }
+  }
+}

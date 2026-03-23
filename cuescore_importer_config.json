@@ -1,0 +1,13 @@
+{
+  "db_path": "C:\\AI\\BillarLanzarote\\database\\sqlite\\billar_lanzarote.sqlite",
+  "raw_root": "C:\\AI\\BillarLanzarote\\data\\raw_cuescore",
+  "screenshots_root": "C:\\AI\\BillarLanzarote\\data\\raw_cuescore\\screenshots",
+  "profile_import_root": "C:\\AI\\BillarLanzarote\\data\\raw_cuescore\\profiles",
+  "match_import_root": "C:\\AI\\BillarLanzarote\\data\\raw_cuescore\\matches",
+  "save_html_every_time": true,
+  "save_screenshot_when_possible": true,
+  "requests_timeout_seconds": 20,
+  "auto_create_players": true,
+  "keep_cuescore_name_exact": true,
+  "log_to_events_table": true
+}

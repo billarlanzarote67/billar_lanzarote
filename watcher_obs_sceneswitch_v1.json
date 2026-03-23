@@ -1,0 +1,9 @@
+{
+  "dry_run": true,
+  "obs_host": "127.0.0.1",
+  "obs_port": 4455,
+  "obs_password": "",
+  "mesa1_scene": "Mesa 1",
+  "mesa2_scene": "Mesa 2",
+  "preferred_when_both_live": "mesa1"
+}

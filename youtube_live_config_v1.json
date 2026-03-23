@@ -1,0 +1,13 @@
+{
+  "enabled": false,
+  "mode": "safe_skip_if_missing",
+  "credentials_json_path": "C:\\AI\\BillarLanzarote\\config\\youtube_credentials.json",
+  "token_json_path": "C:\\AI\\BillarLanzarote\\config\\youtube_token.json",
+  "default_broadcast_id": "",
+  "default_stream_id": "",
+  "transition_targets": {
+    "pre_live": "testing",
+    "go_live": "live",
+    "end_live": "complete"
+  }
+}

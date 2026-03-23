@@ -1,0 +1,29 @@
+{
+  "input": {
+    "camera_index": 0,
+    "rtsp_url_high": "rtsp://USERNAME:PASSWORD@CAMERA_IP:554/stream1",
+    "rtsp_url_low": "rtsp://USERNAME:PASSWORD@CAMERA_IP:554/stream2",
+    "preferred_mode": "camera"
+  },
+  "detection": {
+    "method": "hough_circles_baseline",
+    "resize_input_width": 1400,
+    "blur_kernel": 7,
+    "hough_dp": 1.2,
+    "hough_min_dist": 28,
+    "hough_param1": 100,
+    "hough_param2": 18,
+    "min_radius": 8,
+    "max_radius": 22
+  },
+  "stability": {
+    "movement_px_threshold": 6,
+    "stable_seconds_required": 1.5,
+    "save_layouts_when_stable": true
+  },
+  "output": {
+    "overlay_json": "output/overlay_state.json",
+    "layout_dir": "output/layouts",
+    "save_debug_frames": false
+  }
+}

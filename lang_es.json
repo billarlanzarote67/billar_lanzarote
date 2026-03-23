@@ -1,0 +1,18 @@
+{
+  "cue_foul": "Falta",
+  "white_ball_pocketed": "Bola en mano",
+  "shot_easy": "Tiro fácil",
+  "shot_medium": "Tiro normal",
+  "shot_hard": "Tiro difícil",
+  "rack_start": "Empieza la partida",
+  "rack_end": "Final de partida",
+  "player_turn": "Turno de jugador",
+  "demo_mode_event": "Evento de demostración",
+  "system_ok": "SISTEMA OK",
+  "players": "Jugadores",
+  "score": "Marcador",
+  "discipline": "Modalidad",
+  "recent_matches": "Partidas recientes",
+  "status_live": "PARTIDA EN CURSO",
+  "status_idle": "EN ESPERA"
+}

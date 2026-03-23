@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Billar Lanzarote Players / H2H</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #111; color: #eee; padding: 20px; }
+    h1 { margin-bottom: 20px; }
+    .toolbar, .card { background: #1c1c1c; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+    .toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    select, button { padding: 10px; border-radius: 8px; border: none; }
+    button { background: #2d8cff; color: #fff; cursor: pointer; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .name { font-size: 22px; font-weight: bold; margin-bottom: 10px; }
+    .row { margin: 6px 0; }
+    .muted { color: #aaa; }
+    .error { color: #ff7b7b; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Billar Lanzarote Players / H2H</h1>
+  <div class="toolbar">
+    <label>Player A</label>
+    <select id="a"></select>
+    <label>Player B</label>
+    <select id="b"></select>
+    <button onclick="loadH2H()">Load H2H</button>
+  </div>
+  <div id="status" class="card muted">Choose two different players.</div>
+  <div id="result" class="grid"></div>
+  <script>
+    function fmtValue(v, suffix = "") {
+      if (v === null || v === undefined || v === "") return "—";
+      if (typeof v === "number" && Number.isInteger(v)) return `${v}${suffix}`;
+      if (typeof v === "number") return `${Math.round(v)}${suffix}`;
+      return `${v}${suffix}`;
+    }
+    function playerCard(title, data) {
+      return `
+        <div class="card">
+          <div class="name">${title}</div>
+          <div class="row"><strong>Name:</strong> ${data.display_name || "—"}</div>
+          <div class="row"><strong>Matches:</strong> ${fmtValue(data.matches_played)}</div>
+          <div class="row"><strong>Wins:</strong> ${fmtValue(data.wins)}</div>
+          <div class="row"><strong>Losses:</strong> ${fmtValue(data.losses)}</div>
+          <div class="row"><strong>Frames Won:</strong> ${fmtValue(data.frames_won)}</div>
+          <div class="row"><strong>Frames Lost:</strong> ${fmtValue(data.frames_lost)}</div>
+          <div class="row"><strong>Win %:</strong> ${fmtValue(data.win_rate, "%")}</div>
+        </div>`;
+    }
+    async function boot() {
+      const res = await fetch('/api/players');
+      const data = await res.json();
+      const a = document.getElementById('a');
+      const b = document.getElementById('b');
+      if (!Array.isArray(data)) {
+        document.getElementById('status').innerHTML = `<span class="error">Failed to load players.</span>`;
+        return;
+      }
+      for (const p of data) {
+        const oa = document.createElement('option'); oa.value = p.player_id; oa.textContent = p.display_name; a.appendChild(oa);
+        const ob = document.createElement('option'); ob.value = p.player_id; ob.textContent = p.display_name; b.appendChild(ob);
+      }
+      if (b.options.length > 1) b.selectedIndex = 1;
+    }
+    async function loadH2H() {
+      const a = document.getElementById('a').value;
+      const b = document.getElementById('b').value;
+      const status = document.getElementById('status');
+      const result = document.getElementById('result');
+      if (!a || !b) { status.innerHTML = `<span class="error">Choose both players.</span>`; result.innerHTML = ''; return; }
+      if (a === b) { status.innerHTML = `<span class="error">Choose two different players.</span>`; result.innerHTML = ''; return; }
+      const res = await fetch(`/api/headtohead?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`);
+      const data = await res.json();
+      if (data.status === 'error') {
+        status.innerHTML = `<span class="error">${data.message || data.error || 'Unknown error'}</span>`;
+        result.innerHTML = '';
+        return;
+      }
+      status.textContent = data.note || 'Comparison loaded.';
+      result.innerHTML = playerCard('Player A', data.player_a) + playerCard('Player B', data.player_b);
+    }
+    boot();
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "schema": "bl.shot_hardness.v1",
+  "table_id": "mesa1",
+  "ts_utc": "2026-03-21T00:05:08Z",
+  "hardness": {
+    "score_0_100": 100,
+    "label": "MISIÓN IMPOSIBLE",
+    "confidence_0_1": 0.85
+  },
+  "public_overlay": {
+    "visible": true,
+    "text": "Dificultad: MISIÓN IMPOSIBLE"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "bl.fused_state.v1",
+  "ts_utc": "2026-03-22T18:32:08Z",
+  "table_id": "mesa1",
+  "cuescore": null,
+  "ai": {
+    "schema": "bl.ai_state.v1",
+    "ts_utc": "2026-03-19T23:18:11Z",
+    "table_id": "mesa1",
+    "status": "ok",
+    "active_processing": true,
+    "shot_active": true,
+    "vision_fps_target": 10,
+    "last_hardness": null
+  },
+  "hardness": {
+    "schema": "bl.shot_hardness.v1",
+    "table_id": "mesa1",
+    "ts_utc": "2026-03-21T00:05:08Z",
+    "hardness": {
+      "score_0_100": 100,
+      "label": "MISIÓN IMPOSIBLE",
+      "confidence_0_1": 0.85
+    },
+    "public_overlay": {
+      "visible": true,
+      "text": "Dificultad: MISIÓN IMPOSIBLE"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "table": "mesa2",
+  "source": "bridge",
+  "motion_active": false,
+  "live": {
+    "active": false,
+    "table_name": "Mesa 2",
+    "player_a": null,
+    "player_b": null,
+    "score_a": null,
+    "score_b": null,
+    "challenge_url": null,
+    "discipline": null,
+    "last_seen_ts": "2026-03-22T20:19:25Z"
+  }
+}

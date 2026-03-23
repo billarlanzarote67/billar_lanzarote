@@ -1,0 +1,38 @@
+
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<style>
+body{font-family:Arial,sans-serif;background:#0b0b0b;color:#fff;padding:20px;margin:0}
+.banner{background:linear-gradient(90deg,#1a1a1a,#ff3c00);padding:18px 22px;border-radius:18px;font-size:24px;font-weight:800;margin-bottom:18px;box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.muted{color:#ffb08f;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#141414;border:1px solid #ff7a00;border-radius:18px;padding:16px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.row{margin:6px 0}
+.btn{background:#ff5a00;border:none;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer}
+input,select{background:#0f0f0f;color:#fff;border:1px solid #ff7a00;padding:10px;border-radius:10px}
+table{width:100%;border-collapse:collapse;background:#141414;border:1px solid #ff7a00;border-radius:16px;overflow:hidden}
+th,td{padding:10px;border-bottom:1px solid #262626;text-align:left}
+th{background:#1a1a1a}
+.photo{width:78px;height:78px;border-radius:50%;object-fit:cover;background:#333;margin-bottom:10px;border:2px solid #ff7a00}
+@media(max-width:700px){body{padding:12px}.banner{font-size:20px}.grid{grid-template-columns:1fr}}
+</style></head><body>
+<div class='banner'>Billar Lanzarote Player Gallery</div>
+<div class='muted'>Tema volcánico · vista bonita · texto jugadores en español</div>
+<div id='grid' class='grid'></div>
+<script>
+async function run(){
+  const res = await fetch('/api/players');
+  const data = await res.json();
+  const grid = document.getElementById('grid');
+  grid.innerHTML = data.players.map(p => `
+    <div class="card">
+      <img class="photo" src="${p.photo_url || ''}" onerror="this.style.display='none'">
+      <div style="font-size:22px;font-weight:700">${p.name}</div>
+      <div class="row">Partidas: ${p.matches}</div>
+      <div class="row">Victorias: ${p.wins}</div>
+      <div class="row">Derrotas: ${p.losses}</div>
+      <div class="row">% victoria: ${p.win_pct}</div>
+    </div>`).join('');
+}
+run();
+</script>
+</body></html>

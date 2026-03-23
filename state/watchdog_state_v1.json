@@ -1,0 +1,12 @@
+{
+  "startup_alert_sent": true,
+  "obs": 1774294846.8980575,
+  "ai": 1774294847.9185991,
+  "mediamtx": 1774060827.5953302,
+  "rtsp1": 1773959329.8332267,
+  "rtsp2": 1773959330.0925603,
+  "recovered::obs": true,
+  "recovered::mediamtx": true,
+  "recovered::rtsp1": true,
+  "recovered::rtsp2": true
+}

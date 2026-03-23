@@ -1,0 +1,24 @@
+{
+  "table": "mesa2",
+  "source": "mesa2_match.json",
+  "match": {
+    "table_key": "mesa2",
+    "table_name": "Mesa 2",
+    "table_display_name_es": "Mesa 2",
+    "game_type_es": null,
+    "status": "live",
+    "player_a": "Carlos Enrique Moreno Angulo",
+    "player_b": "Ais Eyez Bailey",
+    "raw_player_a": "Breaking\n        Ball in hand\n      \n      \n        \n          \n          \n        \n        \n          \n            Carlos Enrique\n            Moreno Angulo\n            \n          \n        \n      \n      7\n      \n        \n          Innings\n            ...\n          \n          Average\n            ...\n          \n          High run\n            ...\n          \n          Total average\n            ...\n          \n        \n        0Runouts\n        \n          Break",
+    "raw_player_b": "Breaking\n        Ball in hand\n      \n      \n        \n        \n            Ais\n            Eyez Bailey\n            \n          \n        \n        \n          \n          \n        \n      \n      0\n      \n        \n          Innings\n            ...\n          \n          Average\n            ...\n          \n          High run\n            ...\n          \n          Total average\n            ...\n          \n        \n        0Runouts\n        \n          Break",
+    "score_a": 7,
+    "score_b": 0,
+    "score": "7-0",
+    "race_to": 7,
+    "race_text_es": "Carrera a 7",
+    "winner": "Carlos Enrique Moreno Angulo",
+    "loser": "Ais Eyez Bailey",
+    "source_url": "https://cuescore.com/scoreboard/?code=0b581e05",
+    "last_update": "2026-03-23T00:10:40.494079"
+  }
+}

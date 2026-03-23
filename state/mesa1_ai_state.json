@@ -1,0 +1,10 @@
+{
+  "schema": "bl.ai_state.v1",
+  "ts_utc": "2026-03-19T23:18:11Z",
+  "table_id": "mesa1",
+  "status": "ok",
+  "active_processing": true,
+  "shot_active": true,
+  "vision_fps_target": 10,
+  "last_hardness": null
+}

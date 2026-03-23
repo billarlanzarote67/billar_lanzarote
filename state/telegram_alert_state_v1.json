@@ -1,0 +1,11 @@
+{
+  "last_status": "error",
+  "last_alert_codes": [
+    "MISSING_FILES",
+    "MEDIAMTX_DOWN",
+    "RTSP_ROUTE_FAIL",
+    "RTSP_ROUTE_FAIL"
+  ],
+  "startup_sent": true,
+  "shutdown_sent": false
+}

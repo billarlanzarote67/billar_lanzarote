@@ -1,0 +1,24 @@
+{
+  "table": "mesa1",
+  "source": "mesa1_match.json",
+  "match": {
+    "table_key": "mesa1",
+    "table_name": "Mesa 1",
+    "table_display_name_es": "Mesa 1",
+    "game_type_es": null,
+    "status": "idle",
+    "player_a": null,
+    "player_b": null,
+    "raw_player_a": "",
+    "raw_player_b": "",
+    "score_a": null,
+    "score_b": null,
+    "score": null,
+    "race_to": null,
+    "race_text_es": "Carrera desconocida",
+    "winner": null,
+    "loser": null,
+    "source_url": "https://cuescore.com/scoreboard/overlay/?tableId=77273419",
+    "last_update": "2026-03-23T00:10:40.469322"
+  }
+}

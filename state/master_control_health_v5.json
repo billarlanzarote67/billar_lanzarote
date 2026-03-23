@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "system": {
+    "name": "Billar Lanzarote",
+    "version": "master_control_v5",
+    "status": "error",
+    "last_update": "2026-03-20T18:25:48Z"
+  },
+  "master_control": {
+    "mediamtx_routes": {
+      "mesa1": {
+        "ok": true,
+        "reason": "tcp_ok_127.0.0.1_8554"
+      },
+      "mesa2": {
+        "ok": true,
+        "reason": "tcp_ok_127.0.0.1_8554"
+      }
+    },
+    "services": {
+      "mediamtx_8554": true,
+      "dashboard_8787": false,
+      "obs_websocket_4455": false
+    },
+    "critical_files": {
+      "state\\health_state.json": {
+        "exists": false,
+        "fresh": false
+      },
+      "state\\mesa1_cuescore_state.json": {
+        "exists": false,
+        "fresh": false
+      },
+      "state\\mesa2_cuescore_state.json": {
+        "exists": false,
+        "fresh": false
+      },
+      "state\\mesa1_overlay_state.json": {
+        "exists": false,
+        "fresh": false
+      },
+      "state\\mesa2_overlay_state.json": {
+        "exists": false,
+        "fresh": false
+      },
+      "state\\mesa1_ai_state.json": {
+        "exists": true,
+        "fresh": false
+      },
+      "state\\mesa2_ai_state.json": {
+        "exists": false,
+        "fresh": false
+      }
+    }
+  },
+  "alerts": [
+    {
+      "level": "error",
+      "code": "MISSING_FILES",
+      "message": "Missing critical files: state\\health_state.json, state\\mesa1_cuescore_state.json, state\\mesa2_cuescore_state.json, state\\mesa1_overlay_state.json, state\\mesa2_overlay_state.json, state\\mesa2_ai_state.json",
+      "time": "2026-03-20T18:25:48Z"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-03-23 19:44:23",
+  "obs_process_ok": true,
+  "obs_websocket_ok": false,
+  "mediamtx_process_ok": true,
+  "rtsp_mesa1_ok": true,
+  "rtsp_mesa2_ok": true,
+  "ai_state_fresh": false,
+  "system_health_fresh": false,
+  "master_control_fresh": false,
+  "current_match_fresh": false
+}

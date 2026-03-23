@@ -1,0 +1,28 @@
+========================================
+MASTER CONTROL PACK v5 – SHORT GUIDE
+========================================
+
+1. Extract:
+   billar_master_control_pack_v5.zip
+   -> to: C:\AI\BillarLanzarote
+
+2. Run:
+   00_INSTALL_MASTER_CONTROL_PACK_v5.bat
+
+3. Run:
+   INSTALL_ALL_v5.bat
+
+4. Run:
+   START_ALL_v5.bat
+
+5. Open:
+   http://127.0.0.1:8787
+
+6. If errors:
+   - run CHECK_SYSTEM_HEALTH_v5.bat
+   - run VIEW_LOGS_v5.bat
+
+Recommended behavior:
+- fail fast on errors
+- do not continue install after critical failure
+- keep dashboard open during testing

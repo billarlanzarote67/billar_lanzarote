@@ -1,0 +1,6 @@
+@echo off
+taskkill /FI "WINDOWTITLE eq BL DEMO SIMULATOR*" /F
+taskkill /FI "WINDOWTITLE eq BL DEMO SIMULATOR STRESS*" /F
+taskkill /FI "WINDOWTITLE eq BL DEMO OVERLAY*" /F
+taskkill /FI "WINDOWTITLE eq BL DEMO DASHBOARD*" /F
+pause

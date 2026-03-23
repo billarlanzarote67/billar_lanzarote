@@ -1,0 +1,18 @@
+{
+  "db_path": "C:\\AI\\BillarLanzarote\\database\\sqlite\\billar_lanzarote.sqlite",
+  "auto_import_enabled": true,
+  "poll_seconds": 60,
+  "mesa_state_files": [
+    "C:\\AI\\BillarLanzarote\\state\\mesa1_cuescore_state.json",
+    "C:\\AI\\BillarLanzarote\\state\\mesa2_cuescore_state.json"
+  ],
+  "venue_url": "https://cuescore.com/venue/Billar+Lanzarote/77273368",
+  "seed_tournament_url": "https://cuescore.com/tournament/Inaguraci%C3%B3n+Billar+Lanzarote/77005630",
+  "photo_cache_root": "C:\\AI\\BillarLanzarote\\data\\players\\photos",
+  "requests_timeout_seconds": 20,
+  "photo_quality": "medium",
+  "manual_fallback_enabled": true,
+  "log_root": "C:\\AI\\BillarLanzarote\\logs\\import",
+  "queue_file": "C:\\AI\\BillarLanzarote\\state\\cuescore_auto_import_queue.json",
+  "telegram_alerts_enabled": false
+}

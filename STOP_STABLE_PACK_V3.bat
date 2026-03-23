@@ -1,0 +1,6 @@
+@echo off
+taskkill /FI "WINDOWTITLE eq BL STABLE V3 WATCHER*" /F
+taskkill /FI "WINDOWTITLE eq BL STABLE V3 OVERLAY API*" /F
+taskkill /FI "WINDOWTITLE eq BL STABLE V3 CONTROL PANEL*" /F
+taskkill /FI "WINDOWTITLE eq BL STABLE V3 STREAM CTRL*" /F
+pause

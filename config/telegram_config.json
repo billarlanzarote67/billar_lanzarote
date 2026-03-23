@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "telegram_enabled": true,
+  "bot_username": "@BillarLanzaroteAlertsBot",
+  "chat_id": "1102466013",
+  "bot_token": "8677774799:AAHfU74_aBUbvWqPUuz4ErhCJg4NCl6Vdk0",
+  "enabled": true,
+  "alert_log_path": "C:\\AI\\BillarLanzarote\\logs\\telegram\\telegram_alerts.log"
+}

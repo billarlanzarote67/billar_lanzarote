@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "send_match_start": true,
+  "send_match_end": true,
+  "send_stream_start": true,
+  "send_stream_stop": true,
+  "send_route_recovered": false,
+  "send_obs_unreachable": false,
+  "send_mediamtx_recovered": false,
+  "send_rtsp_recovered": false,
+  "language": "en"
+}

@@ -1,0 +1,24 @@
+{
+  "root": "C:\\AI\\BillarLanzarote_DEMO",
+  "obs": {
+    "host": "127.0.0.1",
+    "port": 4455,
+    "password": "",
+    "scene_map": {
+      "mesa1": "DEMO Mesa 1",
+      "mesa2": "DEMO Mesa 2"
+    }
+  },
+  "ui": {
+    "dashboard_port": 8798,
+    "overlay_port": 8799
+  },
+  "simulator": {
+    "mode": "normal",
+    "event_interval_seconds": 8,
+    "stress_interval_seconds": 2
+  },
+  "telegram": {
+    "enabled": false
+  }
+}

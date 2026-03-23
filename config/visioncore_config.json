@@ -1,0 +1,12 @@
+{
+  "mesa1": {
+    "source": "rtsp://127.0.0.1:8554/mesa1",
+    "state_path": "C:\\AI\\BillarLanzarote\\state\\mesa1_ai_state.json"
+  },
+  "mesa2": {
+    "source": "rtsp://127.0.0.1:8554/mesa2",
+    "state_path": "C:\\AI\\BillarLanzarote\\state\\mesa2_ai_state.json"
+  },
+  "motion_threshold": 18,
+  "save_debug_frames": false
+}

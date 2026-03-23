@@ -1,0 +1,34 @@
+{
+  "root": "C:\\AI\\BillarLanzarote",
+  "db_path": "C:\\AI\\BillarLanzarote\\data\\db\\billar_lanzarote.db",
+  "language": "es",
+  "tables": {
+    "mesa1": {
+      "name": "Mesa 1",
+      "codepersonal": "c5f492c7",
+      "scene_name": "Mesa 1"
+    },
+    "mesa2": {
+      "name": "Mesa 2",
+      "codepersonal": "0b581e05",
+      "scene_name": "Mesa 2"
+    }
+  },
+  "ui": {
+    "control_panel_port": 8788,
+    "overlay_port": 8789
+  },
+  "watcher": {
+    "poll_seconds": 10,
+    "save_raw_html": true
+  },
+  "obs": {
+    "enabled": true,
+    "host": "127.0.0.1",
+    "port": 4455,
+    "password": "BillarLanzarote67",
+    "auto_start": true,
+    "auto_stop": true,
+    "auto_stop_delay_seconds": 90
+  }
+}

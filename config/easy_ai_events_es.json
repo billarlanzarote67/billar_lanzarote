@@ -1,0 +1,62 @@
+{
+  "enabled": true,
+  "player_language": "es",
+  "events": {
+    "cue_foul": {
+      "enabled": true,
+      "label": "Falta"
+    },
+    "white_ball_pocketed": {
+      "enabled": true,
+      "label": "Bola en mano"
+    },
+    "shot_easy": {
+      "enabled": true,
+      "label": "Tiro fácil"
+    },
+    "shot_medium": {
+      "enabled": true,
+      "label": "Tiro normal"
+    },
+    "shot_hard": {
+      "enabled": true,
+      "label": "Tiro difícil"
+    },
+    "rack_start": {
+      "enabled": true,
+      "label": "Empieza la partida"
+    },
+    "rack_end": {
+      "enabled": true,
+      "label": "Final de partida"
+    },
+    "player_turn": {
+      "enabled": true,
+      "label": "Turno de jugador"
+    },
+    "break_and_run": {
+      "enabled": true,
+      "label": "Rompe y gana"
+    },
+    "frames_stolen": {
+      "enabled": true,
+      "label": "Remontada"
+    },
+    "runout": {
+      "enabled": true,
+      "label": "Runout"
+    },
+    "cluster": {
+      "enabled": true,
+      "label": "Grupo de bolas"
+    },
+    "long_think": {
+      "enabled": true,
+      "label": "Pensando mucho"
+    },
+    "near_runout": {
+      "enabled": true,
+      "label": "Casi runout"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "root": "C:\\AI\\BillarLanzarote",
+  "tables": {
+    "mesa1": {
+      "code": "c5f492c7",
+      "name": "Mesa 1"
+    },
+    "mesa2": {
+      "code": "0b581e05",
+      "name": "Mesa 2"
+    }
+  },
+  "watcher": {
+    "poll_seconds": 5
+  },
+  "stream": {
+    "auto_start": true,
+    "auto_stop": true,
+    "auto_stop_delay_seconds": 90,
+    "obs_host": "127.0.0.1",
+    "obs_port": 4455,
+    "obs_password": "",
+    "scene_map": {
+      "mesa1": "Mesa 1",
+      "mesa2": "Mesa 2"
+    }
+  },
+  "telegram": {
+    "enabled": true,
+    "match_start": true,
+    "match_end": true,
+    "stream_start": true,
+    "stream_end": true,
+    "hard_failures": true,
+    "debug": false,
+    "bot_token": "",
+    "chat_id": "1102466013"
+  },
+  "ui": {
+    "control_panel_port": 8788,
+    "overlay_port": 8789
+  }
+}

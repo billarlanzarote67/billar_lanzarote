@@ -1,0 +1,18 @@
+{
+  "table_id": "mesa1",
+  "enabled": true,
+  "rtsp_url": "rtsp://127.0.0.1:8554/mesa1",
+  "fps_target": 10,
+  "ball_min_radius_px": 6,
+  "ball_max_radius_px": 18,
+  "stillness_frames_needed": 12,
+  "motion_start_threshold": 45000,
+  "motion_stop_threshold": 12000,
+  "public_min_confidence": 0.72,
+  "state_file": "C:\\AI\\BillarLanzarote\\state\\mesa1_table_state.json",
+  "ai_state_file": "C:\\AI\\BillarLanzarote\\state\\mesa1_ai_state.json",
+  "hardness_file": "C:\\AI\\BillarLanzarote\\state\\mesa1_shot_hardness.json",
+  "events_dir": "C:\\AI\\BillarLanzarote\\data\\events\\mesa1",
+  "clips_dir": "C:\\AI\\BillarLanzarote\\data\\clips\\mesa1",
+  "calibration_file": "C:\\AI\\BillarLanzarote\\calibration\\mesa1_calibration.json"
+}

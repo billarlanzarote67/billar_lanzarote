@@ -1,0 +1,11 @@
+{
+  "how_to_use": [
+    "In the Tapo app create a separate camera account for RTSP/ONVIF.",
+    "Then replace USERNAME, PASSWORD and CAMERA_IP below.",
+    "Try stream1 first for high quality, stream2 if stream1 struggles."
+  ],
+  "examples": {
+    "high_quality": "rtsp://USERNAME:PASSWORD@192.168.1.44:554/stream1",
+    "fallback": "rtsp://USERNAME:PASSWORD@192.168.1.44:554/stream2"
+  }
+}

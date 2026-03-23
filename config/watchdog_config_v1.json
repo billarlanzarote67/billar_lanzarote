@@ -1,0 +1,46 @@
+{
+  "root": "C:\\AI\\BillarLanzarote",
+  "poll_interval_seconds": 15,
+  "startup_grace_seconds": 90,
+  "json_stale_seconds": 45,
+  "rtsp_timeout_seconds": 8,
+  "websocket_timeout_seconds": 5,
+  "cooldown_seconds": 300,
+  "max_restart_retries": 3,
+  "english_only": true,
+  "preferred_scene": "Mesa 1",
+  "obs_websocket_host": "127.0.0.1",
+  "obs_websocket_port": 4455,
+  "obs_exe_candidates": [
+    "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe",
+    "C:\\Program Files (x86)\\obs-studio\\bin\\64bit\\obs64.exe"
+  ],
+  "mediamtx_exe": "C:\\AI\\BillarLanzarote\\services\\mediamtx\\mediamtx.exe",
+  "rtsp_routes": {
+    "mesa1": "rtsp://127.0.0.1:8554/mesa1",
+    "mesa2": "rtsp://127.0.0.1:8554/mesa2"
+  },
+  "health_files": {
+    "master_control": "C:\\AI\\BillarLanzarote\\state\\master_control_health_v5.json",
+    "system_health": "C:\\AI\\BillarLanzarote\\state\\health_state.json",
+    "current_match": "C:\\AI\\BillarLanzarote\\data\\overlay\\current_match.json",
+    "ai_state": "C:\\AI\\BillarLanzarote\\data\\overlay\\ai_state.json"
+  },
+  "restart_flags": {
+    "obs": "C:\\AI\\BillarLanzarote\\services\\control\\RESTART_OBS_v5.flag",
+    "ai": "C:\\AI\\BillarLanzarote\\services\\watchdog\\RESTART_AI_v1.flag",
+    "stream": "C:\\AI\\BillarLanzarote\\services\\watchdog\\RESTART_STREAM_v1.flag"
+  },
+  "canonical_launchers": {
+    "start_obs": "C:\\AI\\BillarLanzarote\\scripts\\START_OBS_CANONICAL_v1.bat",
+    "restart_obs": "C:\\AI\\BillarLanzarote\\scripts\\RESTART_OBS_CANONICAL_v1.bat",
+    "start_ai": "C:\\AI\\BillarLanzarote\\scripts\\START_AI_CANONICAL_v1.bat",
+    "restart_ai": "C:\\AI\\BillarLanzarote\\scripts\\RESTART_AI_CANONICAL_v1.bat",
+    "start_watchdog": "C:\\AI\\BillarLanzarote\\scripts\\START_WATCHDOG_CANONICAL_v1.bat",
+    "start_master": "C:\\AI\\BillarLanzarote\\scripts\\START_MASTER_SYSTEM_CANONICAL_v1.bat"
+  },
+  "status_output": "C:\\AI\\BillarLanzarote\\state\\watchdog_status_v1.json",
+  "watchdog_log": "C:\\AI\\BillarLanzarote\\logs\\watchdog\\watchdog_v1.log",
+  "watchdog_state": "C:\\AI\\BillarLanzarote\\state\\watchdog_state_v1.json",
+  "telegram_config": "C:\\AI\\BillarLanzarote\\config\\telegram_config.json"
+}

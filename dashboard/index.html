@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Billar Lanzarote Dashboard</title>
+  <style>
+    body { font-family: Arial; background: #111; color: #eee; padding: 20px; }
+    .card { background: #1b1b1b; border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+  </style>
+</head>
+<body>
+  <h1>Billar Lanzarote Dashboard</h1>
+  <div class="card"><h2>Mesa 1 AI</h2><pre id="m1ai"></pre></div>
+  <div class="card"><h2>Mesa 1 Dificultad</h2><pre id="m1h"></pre></div>
+  <div class="card"><h2>Mesa 2 AI</h2><pre id="m2ai"></pre></div>
+  <div class="card"><h2>Mesa 2 Dificultad</h2><pre id="m2h"></pre></div>
+  <script>
+    async function refresh() {
+      const r = await fetch('/api/state');
+      const d = await r.json();
+      document.getElementById('m1ai').textContent = JSON.stringify(d.mesa1_ai, null, 2);
+      document.getElementById('m1h').textContent = JSON.stringify(d.mesa1_hardness, null, 2);
+      document.getElementById('m2ai').textContent = JSON.stringify(d.mesa2_ai, null, 2);
+      document.getElementById('m2h').textContent = JSON.stringify(d.mesa2_hardness, null, 2);
+    }
+    refresh();
+    setInterval(refresh, 2000);
+  </script>
+</body>
+</html>

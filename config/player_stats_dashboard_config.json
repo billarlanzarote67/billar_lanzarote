@@ -1,0 +1,11 @@
+{
+  "db_path": "C:\\AI\\BillarLanzarote\\database\\sqlite\\billar_lanzarote.sqlite",
+  "dashboard_port": 8790,
+  "photos_root": "C:\\AI\\BillarLanzarote\\data\\players\\photos",
+  "cuescore_state_paths": [
+    "C:\\AI\\BillarLanzarote\\state\\mesa1_cuescore_state.json",
+    "C:\\AI\\BillarLanzarote\\state\\mesa2_cuescore_state.json"
+  ],
+  "auto_import_queue_file": "C:\\AI\\BillarLanzarote\\state\\cuescore_auto_import_queue.json",
+  "auto_import_poll_seconds": 20
+}

@@ -1,0 +1,19 @@
+{
+  "table_name": "Billar Lanzarote Main Table",
+  "table_type": "9ft_pool",
+  "cloth_color": "light_grey",
+  "rails_color": "dark",
+  "camera_mount": "fixed_side_wall",
+  "camera_distance_m": 2.0,
+  "future_projector": true,
+  "future_rack_detection": true,
+  "output_warp_size": {
+    "width": 1400,
+    "height": 700
+  },
+  "notes": [
+    "Built for fixed side/wall camera.",
+    "Click corners in order: top-left, top-right, bottom-right, bottom-left.",
+    "Keep camera fixed after calibration."
+  ]
+}

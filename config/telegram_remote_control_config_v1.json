@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "root": "C:\\AI\\BillarLanzarote",
+  "telegram_base_config_path": "C:\\AI\\BillarLanzarote\\config\\telegram_config.json",
+  "allowed_admins": {
+    "primary_admin_chat_id": "1102466013",
+    "second_admin_chat_id": "SECOND_ADMIN_CHAT_ID_HERE"
+  },
+  "admin_permissions": {
+    "primary_admin_scope": "full",
+    "second_admin_scope": "start_stop_only"
+  },
+  "telegram_ui": {
+    "language": "english",
+    "detailed_replies": true,
+    "reply_keyboard": true,
+    "inline_buttons": true,
+    "include_help": true,
+    "cooldown_seconds": 5
+  },
+  "obs": {
+    "host": "127.0.0.1",
+    "port": 4455,
+    "password": "2Thtj0V9nieNq8O4",
+    "preferred_scenes": ["Mesa 1", "Mesa 2"],
+    "default_go_live_behavior": "let_user_choose",
+    "exe_candidates": [
+      "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe",
+      "C:\\Program Files (x86)\\obs-studio\\bin\\64bit\\obs64.exe"
+    ]
+  },
+  "mediamtx": {
+    "exe_path": "C:\\AI\\BillarLanzarote\\services\\mediamtx\\mediamtx.exe",
+    "rtsp_routes": {
+      "mesa1": "rtsp://127.0.0.1:8554/mesa1",
+      "mesa2": "rtsp://127.0.0.1:8554/mesa2"
+    }
+  },
+  "health_files": {
+    "master_control": "C:\\AI\\BillarLanzarote\\state\\master_control_health_v5.json",
+    "system_health": "C:\\AI\\BillarLanzarote\\state\\health_state.json",
+    "current_match": "C:\\AI\\BillarLanzarote\\data\\overlay\\current_match.json",
+    "ai_state": "C:\\AI\\BillarLanzarote\\data\\overlay\\ai_state.json",
+    "watchdog_status": "C:\\AI\\BillarLanzarote\\state\\watchdog_status_v1.json"
+  },
+  "launchers": {
+    "start_master": "C:\\AI\\BillarLanzarote\\scripts\\START_MASTER_SYSTEM_CANONICAL_v1.bat",
+    "start_watchdog": "C:\\AI\\BillarLanzarote\\scripts\\START_WATCHDOG_CANONICAL_v1.bat",
+    "start_obs": "C:\\AI\\BillarLanzarote\\scripts\\START_OBS_CANONICAL_v1.bat",
+    "restart_obs": "C:\\AI\\BillarLanzarote\\scripts\\RESTART_OBS_CANONICAL_v1.bat",
+    "start_ai": "C:\\AI\\BillarLanzarote\\scripts\\START_AI_CANONICAL_v1.bat",
+    "restart_ai": "C:\\AI\\BillarLanzarote\\scripts\\RESTART_AI_CANONICAL_v1.bat"
+  },
+  "commands": {
+    "enabled": [
+      "/start",
+      "/help",
+      "/status",
+      "/start_all",
+      "/stop_all",
+      "/start_stream",
+      "/stop_stream",
+      "/scene_mesa1",
+      "/scene_mesa2",
+      "/go_live",
+      "/restart_obs",
+      "/restart_ai",
+      "/restart_streams",
+      "/logs"
+    ]
+  },
+  "paths": {
+    "command_audit_log": "C:\\AI\\BillarLanzarote\\logs\\telegram\\command_audit_v1.log",
+    "telegram_remote_log": "C:\\AI\\BillarLanzarote\\logs\\telegram\\telegram_remote_control_v1.log",
+    "state_file": "C:\\AI\\BillarLanzarote\\state\\telegram_remote_state_v1.json"
+  }
+}

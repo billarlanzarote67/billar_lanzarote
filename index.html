@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Billar Lanzarote Player Stats</title>
+<style>
+body{font-family:Arial,sans-serif;background:#111;color:#eee;padding:20px}
+.card{background:#1b1b1b;border-radius:12px;padding:16px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+a{color:#9fd4ff;text-decoration:none}
+img.photo{width:72px;height:72px;border-radius:50%;object-fit:cover;background:#333}
+.row{display:flex;gap:12px;align-items:center}
+</style></head><body>
+<h1>Billar Lanzarote Player Stats</h1>
+<div class="card">
+  <p>Use:</p>
+  <p><code>/api/players</code> for all players</p>
+  <p><code>/api/player/&lt;player_id&gt;</code> for a single player</p>
+  <p><code>/api/headtohead?a=&lt;player_a_id&gt;&amp;b=&lt;player_b_id&gt;</code> for head-to-head</p>
+</div>
+<div id="players" class="grid"></div>
+<script>
+async function loadPlayers(){
+  const r = await fetch('/api/players');
+  const data = await r.json();
+  const host = document.getElementById('players');
+  host.innerHTML = '';
+  for(const p of data){
+    const div = document.createElement('div');
+    div.className = 'card';
+    const photo = p.local_photo_path || p.photo_url || '';
+    div.innerHTML = `
+      <div class="row">
+        ${photo ? `<img class="photo" src="${photo}" alt="">` : `<div class="photo"></div>`}
+        <div>
+          <div><strong>${p.display_name}</strong></div>
+          <div>Matches: ${p.matches_played ?? '-'}</div>
+          <div>Wins: ${p.wins ?? '-'} | Losses: ${p.losses ?? '-'}</div>
+          <div>Win %: ${p.win_rate ?? '-'}</div>
+          <div>Points: ${p.points ?? '-'}</div>
+          <div><a href="/api/player/${p.player_id}" target="_blank">Player JSON</a></div>
+        </div>
+      </div>`;
+    host.appendChild(div);
+  }
+}
+loadPlayers();
+</script></body></html>

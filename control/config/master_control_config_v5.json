@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "root_path": "C:\\AI\\BillarLanzarote",
+  "python_exe": "C:\\Program Files\\Python312\\python.exe",
+  "obs_exe": "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe",
+  "vlc_exe": "C:\\Program Files\\VideoLAN\\VLC\\vlc.exe",
+  "chrome_exe": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+  "health_check_interval_seconds": 60,
+  "dashboard_port": 8787,
+  "log_retention_days": 30,
+  "critical_files": [
+    "state\\health_state.json",
+    "state\\mesa1_cuescore_state.json",
+    "state\\mesa2_cuescore_state.json",
+    "state\\mesa1_overlay_state.json",
+    "state\\mesa2_overlay_state.json",
+    "state\\mesa1_ai_state.json",
+    "state\\mesa2_ai_state.json"
+  ],
+  "pack_installers": [
+    "00_INSTALL_PACK_01_v5.bat",
+    "00_INSTALL_PACK_02_INGEST_WATCHDOG.bat",
+    "00_INSTALL_PACK_03_CUESCORE_CONTEXT.bat",
+    "00_INSTALL_PACK_04_OVERLAY_STATE.bat",
+    "00_INSTALL_PACK_05_AI_STATE_BASELINE_v5.bat",
+    "00_INSTALL_PACK_06_v5.bat",
+    "00_INSTALL_PACK_07_v5.bat",
+    "00_INSTALL_PACK_08_v5.bat",
+    "00_INSTALL_PACK_09_v5.bat",
+    "00_INSTALL_PACK_10_v5.bat",
+    "00_INSTALL_PACK_11_v5.bat",
+    "00_INSTALL_PACK_12_v5.bat"
+  ]
+}

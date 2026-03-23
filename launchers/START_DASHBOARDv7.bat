@@ -1,0 +1,1 @@
+@echo offcd /d C:\AI\BillarLanzarote\dashboard\web_uiecho Starting Dashboard V7...echo.start http://localhost:5000C:\Program Files\Python312\python.exe app.pypause

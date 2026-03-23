@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+body{margin:0;background:transparent;font-family:Arial,sans-serif;color:#fff;overflow:hidden}
+.bar{height:20px;line-height:20px;background:linear-gradient(90deg,#161616,#7a1f00);border-bottom:1px solid #ff7a00;display:grid;grid-template-columns:1fr auto auto auto 1fr;font-size:11px;font-weight:700}
+.left{padding-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mid{padding:0 6px;text-align:center}
+.score{min-width:32px;text-align:center;background:#0d0d0d}
+.race{color:#ffb08f}
+.right{padding-right:8px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style></head><body>
+<div class='bar'>
+  <div id='a' class='left'>Jugador A</div>
+  <div id='sa' class='mid score'>0</div>
+  <div class='mid race'>Race</div>
+  <div id='sb' class='mid score'>0</div>
+  <div id='b' class='right'>Jugador B</div>
+</div>
+<script>
+const params = new URLSearchParams(location.search); const table = params.get('table') || 'mesa1';
+async function tick(){
+ const r = await fetch(`http://127.0.0.1:8789/api/overlay?table=${table}`); const d = await r.json();
+ document.getElementById('a').textContent = d.player_a || 'Jugador A';
+ document.getElementById('b').textContent = d.player_b || 'Jugador B';
+ document.getElementById('sa').textContent = d.score_a ?? 0;
+ document.getElementById('sb').textContent = d.score_b ?? 0;
+}
+tick(); setInterval(tick, 2000);
+</script></body></html>

@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+body{margin:0;background:transparent;font-family:Arial,sans-serif;color:#fff}
+.card{width:360px;background:linear-gradient(180deg,#111,#661000);border:2px solid #ff2a00;border-radius:18px;padding:16px;box-shadow:0 0 24px rgba(255,42,0,.3)}
+.t{font-size:18px;color:#ffc3b8}.n{font-size:24px;font-weight:800;margin:8px 0}.s{font-size:40px;font-weight:900;text-align:center;padding:8px 0}
+</style></head><body><div class='card'><div id='mesa' class='t'>Mesa 1</div><div id='ta' class='n'>Jugador A</div><div class='s' id='sc'>0-0</div><div id='tb' class='n' style='text-align:right'>Jugador B</div><div id='race' class='t' style='text-align:right'>Carrera a 7</div></div>
+<script>
+const params = new URLSearchParams(location.search);
+const table = params.get('table') || 'mesa1';
+const photo = params.get('photo') || 'off';
+async function tick(){
+  const r = await fetch(`file:///C:/AI/BillarLanzarote/state/live_tables.json`).catch(()=>null);
+}
+async function loadData(){
+  try{
+    const txt = await (await fetch('file:///C:/AI/BillarLanzarote/state/live_tables.json')).text();
+    const data = JSON.parse(txt);
+    const t = (data.tables || {})[table] || {};
+    if (document.getElementById('ta')) document.getElementById('ta').textContent = t.player_a || 'Jugador A';
+    if (document.getElementById('tb')) document.getElementById('tb').textContent = t.player_b || 'Jugador B';
+    if (document.getElementById('sc')) document.getElementById('sc').textContent = t.score || '0-0';
+    if (document.getElementById('race')) document.getElementById('race').textContent = t.race_text_es || 'Carrera desconocida';
+    if (document.getElementById('mesa')) document.getElementById('mesa').textContent = t.table_name || table;
+  }catch(e){}
+}
+loadData(); setInterval(loadData, 2000);
+</script>
+</body></html>

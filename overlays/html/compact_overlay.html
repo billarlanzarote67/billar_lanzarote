@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+body{margin:0;background:transparent;font-family:Arial,sans-serif;color:#fff}
+.wrap{padding:14px 20px;background:linear-gradient(90deg,rgba(11,11,11,.94),rgba(255,60,0,.52));display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ff7a00}
+.name{font-size:22px;font-weight:800}.small{font-size:13px;color:#ffb08f}.score{font-size:30px;font-weight:800}
+</style></head><body><div class='wrap'><div><div id='name' class='name'>Billar Lanzarote</div><div id='sub' class='small'>Mesa 1</div></div><div id='score' class='score'>0 - 0</div></div>
+<script>
+const params = new URLSearchParams(location.search); const table = params.get('table') || 'mesa1';
+async function tick(){ const r = await fetch(`http://127.0.0.1:8789/api/overlay?table=${table}`); const d = await r.json();
+document.getElementById('name').textContent = `${d.player_a || '—'} vs ${d.player_b || '—'}`;
+document.getElementById('sub').textContent = `${d.table_name || table} · ${d.discipline || ''}`;
+document.getElementById('score').textContent = `${d.score_a ?? 0} - ${d.score_b ?? 0}`; }
+tick(); setInterval(tick, 2000);
+</script></body></html>

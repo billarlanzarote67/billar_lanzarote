@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+body{margin:0;background:transparent;font-family:Arial,sans-serif;color:#fff;overflow:hidden}
+.bar{height:20px;line-height:20px;background:linear-gradient(90deg,#111,#5e1600);border-top:1px solid #ff7a00;display:grid;grid-template-columns:1fr auto 1fr;font-size:11px;font-weight:700}
+.left{padding-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mid{text-align:center;min-width:40px;background:#0c0c0c}
+.right{padding-right:8px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style></head><body>
+<div class='bar'><div id='a' class='left'>Jugador A</div><div id='s' class='mid'>0-0</div><div id='b' class='right'>Jugador B</div></div>
+<script>
+const params = new URLSearchParams(location.search); const table = params.get('table') || 'mesa1';
+async function tick(){
+ const r = await fetch(`http://127.0.0.1:8789/api/overlay?table=${table}`); const d = await r.json();
+ document.getElementById('a').textContent = d.player_a || 'Jugador A';
+ document.getElementById('b').textContent = d.player_b || 'Jugador B';
+ document.getElementById('s').textContent = `${d.score_a ?? 0}-${d.score_b ?? 0}`;
+}
+tick(); setInterval(tick, 2000);
+</script></body></html>

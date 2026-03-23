@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset='utf-8'><style>body{margin:0;background:transparent;color:#fff;font-family:Arial}.card{width:300px;background:#151515;border:2px solid #ff2a00;border-radius:18px;padding:14px}.n{font-size:18px;font-weight:800;margin:6px 0}.c{font-size:34px;font-weight:900;text-align:center;margin:8px 0}.small{font-size:12px;color:#ffc3b8}</style></head><body><div class='card'><div id='m' class='small'>Mesa 1</div><div id='a' class='n'>Jugador A</div><div id='s' class='c'>0-0</div><div id='b' class='n' style='text-align:right'>Jugador B</div><div id='r' class='small' style='text-align:right'>Carrera a 7</div></div>
+<script>
+const params = new URLSearchParams(location.search); const table = params.get('table') || 'mesa1';
+async function loadData(){
+ try{
+   const txt = await (await fetch('file:///C:/AI/BillarLanzarote/state/live_tables.json')).text();
+   const data = JSON.parse(txt); const t=(data.tables||{})[table]||{};
+   if(document.getElementById('a')) document.getElementById('a').textContent=t.player_a||'Jugador A';
+   if(document.getElementById('b')) document.getElementById('b').textContent=t.player_b||'Jugador B';
+   if(document.getElementById('s')) document.getElementById('s').textContent=t.score||'0-0';
+   if(document.getElementById('r')) document.getElementById('r').textContent=t.race_text_es||'Carrera desconocida';
+   if(document.getElementById('m')) document.getElementById('m').textContent=t.table_name||table;
+ }catch(e){}
+}
+loadData(); setInterval(loadData, 2000);
+</script>
+</body></html>

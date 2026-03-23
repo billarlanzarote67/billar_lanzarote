@@ -1,0 +1,47 @@
+
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<style>
+body{font-family:Arial,sans-serif;background:#0b0b0b;color:#fff;padding:20px;margin:0}
+.banner{background:linear-gradient(90deg,#1a1a1a,#ff3c00);padding:18px 22px;border-radius:18px;font-size:24px;font-weight:800;margin-bottom:18px;box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.muted{color:#ffb08f;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#141414;border:1px solid #ff7a00;border-radius:18px;padding:16px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.row{margin:6px 0}
+.btn{background:#ff5a00;border:none;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer}
+input,select{background:#0f0f0f;color:#fff;border:1px solid #ff7a00;padding:10px;border-radius:10px}
+table{width:100%;border-collapse:collapse;background:#141414;border:1px solid #ff7a00;border-radius:16px;overflow:hidden}
+th,td{padding:10px;border-bottom:1px solid #262626;text-align:left}
+th{background:#1a1a1a}
+.photo{width:78px;height:78px;border-radius:50%;object-fit:cover;background:#333;margin-bottom:10px;border:2px solid #ff7a00}
+@media(max-width:700px){body{padding:12px}.banner{font-size:20px}.grid{grid-template-columns:1fr}}
+</style></head><body>
+<div class='banner'>Billar Lanzarote H2H</div>
+<div class='muted'>Comparador bonito · tema volcánico</div>
+<div class='card' style='margin-bottom:16px'>
+  <select id='a'></select>
+  <select id='b'></select>
+  <button class='btn' onclick='loadH2H()'>Cargar H2H</button>
+</div>
+<div id='summary' class='grid'></div>
+<div class='card' style='margin-top:16px'><table><thead><tr><th>Mesa</th><th>Jugador A</th><th>Jugador B</th><th>Ganador</th><th>Marcador</th><th>Fecha</th></tr></thead><tbody id='rows'></tbody></table></div>
+<script>
+async function boot(){
+ const res = await fetch('/api/players'); const data = await res.json();
+ const opts = data.players.map(n => `<option>${n}</option>`).join('');
+ document.getElementById('a').innerHTML = opts;
+ document.getElementById('b').innerHTML = opts;
+}
+async function loadH2H(){
+ const a = document.getElementById('a').value;
+ const b = document.getElementById('b').value;
+ const res = await fetch(`/api/h2h?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`);
+ const data = await res.json();
+ document.getElementById('summary').innerHTML = `
+   <div class="card"><div style="font-size:20px;font-weight:700">${a}</div><div class="row">Victorias: ${data.summary.wins_a}</div></div>
+   <div class="card"><div style="font-size:20px;font-weight:700">${b}</div><div class="row">Victorias: ${data.summary.wins_b}</div></div>
+   <div class="card"><div style="font-size:20px;font-weight:700">Total</div><div class="row">Partidas: ${data.summary.matches}</div></div>`;
+ document.getElementById('rows').innerHTML = data.matches.map(m => `<tr><td>${m.table_name||''}</td><td>${m.player_a||''}</td><td>${m.player_b||''}</td><td>${m.winner||''}</td><td>${m.score_a ?? ''}-${m.score_b ?? ''}</td><td>${m.timestamp||''}</td></tr>`).join('');
+}
+boot();
+</script>
+</body></html>

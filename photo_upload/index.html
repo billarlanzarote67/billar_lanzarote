@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><style>
+body{font-family:Arial,sans-serif;background:#0b0b0b;color:#fff;padding:20px;margin:0}
+.banner{background:linear-gradient(90deg,#1a1a1a,#ff3c00);padding:18px 22px;border-radius:18px;font-size:24px;font-weight:800;margin-bottom:18px}
+.card{background:#141414;border:1px solid #ff7a00;border-radius:16px;padding:16px;max-width:760px}
+input,select{width:100%;background:#0f0f0f;color:#fff;border:1px solid #ff7a00;padding:10px;border-radius:10px;margin:8px 0}
+button{background:#ff5a00;border:none;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer}
+#msg{margin-top:10px;color:#ffb08f}
+</style></head><body>
+<div class='banner'>Subir foto local de jugador</div>
+<div class='card'>
+<select id='name'></select>
+<input id='path' placeholder='Pega la ruta completa de la foto en Windows, por ejemplo C:\\Fotos\\jugador.jpg'>
+<button onclick='save()'>Guardar foto</button>
+<div id='msg'></div>
+</div>
+<script>
+async function boot(){
+ const r = await fetch('/api/players'); const d = await r.json();
+ document.getElementById('name').innerHTML = d.players.map(p => `<option>${p}</option>`).join('');
+}
+async function save(){
+ const fd = new FormData();
+ fd.append('name', document.getElementById('name').value);
+ fd.append('source_path', document.getElementById('path').value);
+ const r = await fetch('/api/set_photo', {method:'POST', body:fd});
+ const d = await r.json();
+ document.getElementById('msg').textContent = d.ok ? `Foto guardada: ${d.photo_url}` : `Error: ${d.error || 'fallo'}`;
+}
+boot();
+</script></body></html>
